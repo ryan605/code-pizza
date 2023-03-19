@@ -1,4 +1,5 @@
 class RestaurantPizza < ApplicationRecord
-    has_many :pizzas
-    has_many :restaurants
+    validates :price, length: {in: 1..30}
+    belongs_to :pizza
+    belongs_to :restaurant
 end
